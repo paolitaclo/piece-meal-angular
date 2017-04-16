@@ -12,11 +12,12 @@ export class SignInComponent {
 
   constructor() {
     this.credentials = {email: '', password: ''};
+    this.onSignIn = new EventEmitter();
   }
 
   signInUser(credentials): void {
     this.onSignIn.emit(credentials);
   }
 
-get diagnostic() { return JSON.stringify(this.credentials); }
+  get diagnostic() { return JSON.stringify(this.credentials); }
 }

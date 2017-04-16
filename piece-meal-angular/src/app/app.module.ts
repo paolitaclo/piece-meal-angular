@@ -1,14 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { RecipesListComponent } from './recipes-list/recipes-list.component';
-import { RecipeItemComponent } from './recipe-item/recipe-item.component';
-import { SearchBarComponent } from './search-bar/search-bar.component';
-import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
-import { SignInComponent } from './sign-in/sign-in.component';
+import { RecipesListComponent } from './components/recipes-list/recipes-list.component';
+import { RecipeItemComponent } from './components/recipe-item/recipe-item.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,10 @@ import { SignInComponent } from './sign-in/sign-in.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    JsonpModule
   ],
-  providers: [],
+  providers: [ AuthenticationService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

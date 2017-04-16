@@ -3,6 +3,12 @@ interface ICredentials {
   password: string;
 }
 
+interface IUserInfo {
+  id: number;
+  email: string;
+  token: string;
+}
+
 interface IRecipe {
   id: number;
   name: string;
