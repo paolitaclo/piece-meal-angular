@@ -3,7 +3,7 @@ import { RecipesService } from '../../services/recipes.service';
 @Component({
   selector: 'app-main-page',
   template: `
-    <div>
+    <div clas="jumboton">
       <app-navigation-bar (onSearch)="recipesFound($event)"></app-navigation-bar>
       <app-recipes-list [recipes]="recipes"></app-recipes-list>
     </div>

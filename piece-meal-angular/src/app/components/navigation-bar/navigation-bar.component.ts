@@ -6,7 +6,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
     <div>
       <form (ngSubmit)="searchRecipe(query, $event)" #searchForm="ngForm">
         <input type="text" [(ngModel)]="query" name="query"/>
-        <input type="submit" value="Search Recipe"/>
+        <input class="btn btn-primary btn-lg" type="submit" value="Search Recipe"/>
       </form>
     </div>
   `,

@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/vendors/semantic.min.css';
+
+/*body{
+  margin: 0 auto;
+  max-width: 50em;
+  font-family: "Helvetic", "Arial", sans-serif;
+  line-height: 1.5;
+  padding: 4em 1em;
+  color: #555;
+}*/

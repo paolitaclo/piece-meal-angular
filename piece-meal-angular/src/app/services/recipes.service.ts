@@ -49,17 +49,3 @@ export class RecipesService {
     })
   }
 }
-
-// interface IRecipe {
-//   id: number;
-//   name: string;
-//   ingredients: IIngredient[];
-//   instructions: string;
-// }
-//
-// interface IIngredient {
-//   id: number;
-//   name: string;
-//   active: boolean;
-//   tags: string[];
-// }

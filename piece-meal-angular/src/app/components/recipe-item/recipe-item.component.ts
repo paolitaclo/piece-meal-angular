@@ -3,16 +3,25 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-recipe-item',
   template:`
-  <div>
-    <h2>{{recipe.name}}</h2>
-    <ul *ngFor="let ingredient of recipe.ingredients">
-      <li>{{ingredient.name}}</li>
-    </ul>
-    <div>
-    <ul *ngFor="let instruction of recipe.instructions">
+  <div class="container">
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{recipe.name}}</h3>
+    </div>
+    <div class="panel-body">
+      <h5>Ingredients:</h5>
+        <ul *ngFor="let ingredient of recipe.ingredients">
+        <li>{{ingredient.name}}</li>
+        </ul>
+      <div>
+      <h5>Instructions:</h5>
+      <ul *ngFor="let instruction of recipe.instructions">
       <li>{{instruction}}</li>
-    </ul>
+      </ul>
+    </div>
   </div>
+  </div>
+
   `,
   styleUrls: ['./recipe-item.component.css']
 })
