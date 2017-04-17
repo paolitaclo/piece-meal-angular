@@ -4,6 +4,12 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/toPromise';
 import { AuthenticationService } from './authentication.service';
 
+function instructionsIntoArr(instructions: string) {
+    let stringSplited = instructions.split(/\d+./g);
+    let result = stringSplited.filter(step => step.length>0);
+    return result;
+}
+
 @Injectable()
 export class RecipesService {
   searchRecipesUrl: string = 'https://piecemeal-api.herokuapp.com/api/v1/search/recipes';
@@ -30,15 +36,20 @@ export class RecipesService {
       console.log('recipes found in API: ', response);
       return response.json().recipes;
     })
-    // .then((arrRecipes) => {
-    //   console.log('this is only array of recipes: ', arrRecipes.recipes);
-    //   return arrRecipes.recipes;
-    // })
+    .then((recipesArr) => {
+      let newArrRec = recipesArr.map((obj) => {
+        let recipeObj = Object.assign({}, obj, {instructions: instructionsIntoArr(obj.instructions)});
+        return recipeObj;
+      });
+      console.log(newArrRec);
+      return newArrRec;
+    })
     .catch((err) => {
       console.log(err);
     })
   }
 }
+
 // interface IRecipe {
 //   id: number;
 //   name: string;
