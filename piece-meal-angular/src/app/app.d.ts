@@ -6,6 +6,7 @@ interface ICredentials {
 interface IUserInfo {
   id: number;
   email: string;
+  is_super_user: boolean;
   token: string;
 }
 

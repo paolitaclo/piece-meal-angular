@@ -20,10 +20,24 @@ export class AuthenticationService {
     .then(response =>{
       this.userInfo = response.json();
       console.log(this.userInfo);
+      localStorage.setItem('user', JSON.stringify(this.userInfo))
       return this.userInfo;
     })
     .catch((err) =>{
       console.log(err);
     });
+  }
+
+  getUserInfo(userInfo: IUserInfo): any {
+    if (this.userInfo) {
+        return this.userInfo;
+    } else {
+      this.userInfo = JSON.parse(localStorage.getItem('user'));
+      return this.userInfo;
+    }
+  }
+  userLogOut(userInfo: IUserInfo): any {
+    localStorage.removeItem('user');
+    this.userInfo = undefined;
   }
 }
