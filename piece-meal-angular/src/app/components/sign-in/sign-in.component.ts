@@ -1,4 +1,4 @@
-import { Component, Output, OnInit, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,7 +11,7 @@ export class SignInComponent {
   @Output() onSignIn: EventEmitter<ICredentials>;
 
   constructor() {
-    this.credentials = {email: '', password: ''};
+    this.credentials = {email: 'n_claros@gmail.com', password: 'luna'};
     this.onSignIn = new EventEmitter();
   }
 

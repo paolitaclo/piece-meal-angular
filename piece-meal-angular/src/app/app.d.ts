@@ -12,10 +12,13 @@ interface IUserInfo {
 interface IRecipe {
   id: number;
   name: string;
-  recipeAuthor: string;
-  servingsNumber: string;
-  recipeUrl: string;
-  ingredients: string[];
-  instructions: object[];
-  imageUrl: string;
+  ingredients: IIngredient[];
+  instructions: string;
+}
+
+interface IIngredient {
+  id: number;
+  name: string;
+  active: boolean;
+  tags: string[];
 }

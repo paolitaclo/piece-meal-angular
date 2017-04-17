@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navigation-bar',
-  templateUrl: './navigation-bar.component.html',
+  template: `
+    <div>
+      <form (ngSubmit)="searchRecipe(query, $event)" #searchForm="ngForm">
+        <input type="text" [(ngModel)]="query" name="query"/>
+        <input type="submit" value="Search Recipe"/>
+      </form>
+    </div>
+  `,
   styleUrls: ['./navigation-bar.component.css']
 })
-export class NavigationBarComponent implements OnInit {
+export class NavigationBarComponent {
+  query: string;
+  @Output() onSearch: EventEmitter<string>;
 
-  constructor() { }
+  constructor() {
+  this.query = 'cheese';
+  this.onSearch = new EventEmitter();
+}
 
-  ngOnInit() {
-  }
+searchRecipe(query, $event): void {
+  $event.preventDefault();
+  this.onSearch.emit(query);
+}
 
 }

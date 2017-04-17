@@ -9,7 +9,9 @@ import { RecipeItemComponent } from './components/recipe-item/recipe-item.compon
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 import { AuthenticationService } from './services/authentication.service';
+import { RecipesService } from './services/recipes.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { AuthenticationService } from './services/authentication.service';
     RecipeItemComponent,
     SearchBarComponent,
     NavigationBarComponent,
-    SignInComponent
+    SignInComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { AuthenticationService } from './services/authentication.service';
     HttpModule,
     JsonpModule
   ],
-  providers: [ AuthenticationService ],
+  providers: [ AuthenticationService, RecipesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

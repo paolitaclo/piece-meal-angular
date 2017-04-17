@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-recipes-list',
-  templateUrl: './recipes-list.component.html',
+  template: `
+    <div *ngFor="let recipe of recipes"> Recipes Found:
+      <app-recipe-item [recipe]="recipe"></app-recipe-item>
+    </div>
+  `,
   styleUrls: ['./recipes-list.component.css']
 })
-export class RecipesListComponent implements OnInit {
-
+export class RecipesListComponent {
+  @Input() recipes: IRecipe[];
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
