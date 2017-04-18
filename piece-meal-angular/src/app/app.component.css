@@ -1,16 +1,29 @@
-.container {
+/* container is a bootstrap class that needs to be combined with grid */
+.app-container {
   width: 100%;
-  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .anchor {
   padding: .5em;
   font-size: 30apx;
 }
+
+.navbar {
+  flex: 0 0 auto;
+}
+
 .main-image{
+  flex: 1 1 auto;
   background-image: url('../assets/images/background2.jpg');
   background-repeat: no-repeat;
+  /* background-size is the property you need, try contain vs cover */
+  background-size: cover;
+  /*
   width: 1440px;
   height: 978px;
+  */
 }
 .custom {
     margin-bottom: 0;

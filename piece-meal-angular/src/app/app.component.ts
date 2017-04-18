@@ -4,7 +4,7 @@ import { AuthenticationService } from './services/authentication.service';
 @Component({
   selector: 'app-root',
   template: `
-  <div class="container">
+  <div class="app-container">
     <nav class="navbar navbar-default custom">
       <div class="row">
         <div class="col-xs-6 col-s-6 col-md-6 brand brand-name">
@@ -14,11 +14,8 @@ import { AuthenticationService } from './services/authentication.service';
               <img class="logo-image" alt="Brand" src="../assets/images/icon-food.png">
               </div>
         <div class="col-xs-4 col-md-4 button-right">
-          <div class="">
-            <div class="">
-              <button class="btn btn-primary btn-lg" (click)="logOut()" *ngIf="authenticationService.userInfo" name="logOut">Log Out</button>
-            </div>
-          </div>
+          <button class="btn btn-primary btn-lg" (click)="logOut()"
+          *ngIf="authenticationService.userInfo" name="logOut">Log Out</button>
         </div>
       </div>
 
