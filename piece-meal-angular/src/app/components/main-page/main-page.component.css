@@ -1,7 +1,5 @@
-/*.top-container{
-  height: 200px;
-  width: 100%;
-  font-family: "Helvetic", "Arial", sans-serif;
-  line-height: 1.5;
-  padding: 4em 1em;
-}*/
+.center-cubes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

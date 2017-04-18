@@ -1,11 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 @import './assets/vendors/semantic.min.css';
 
-/*body{
-  margin: 0 auto;
-  max-width: 50em;
-  font-family: "Helvetic", "Arial", sans-serif;
-  line-height: 1.5;
-  padding: 4em 1em;
-  color: #555;
+/*.container {
+  width: 100%;
+  padding: 0;
 }*/
+
+.brand {
+  font-size: 3em;
+  margin: 25px 0 0 0;
+}
+
+.brand a {
+  margin-left: 20px;
+}
+
+.row {
+  width: 100%;
+}
+
+.button-right {
+  text-align: right;
+  padding-top: 8px;
+}
+
+.btn-default {
+  margin-top: 10px;
+}
+.logo-image {
+  text-align: left;
+}
+.logo-div {
+  margin-top: 5px;
+}
+
+.brand-name {
+  text-align: right;
+}

@@ -4,15 +4,27 @@ import { AuthenticationService } from './services/authentication.service';
 @Component({
   selector: 'app-root',
   template: `
-  <div class="">
-    <div class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-left">
-          <button class="" (click)="logOut()" *ngIf="authenticationService.userInfo" name="logOut">Log Out</button>
+  <div class="container">
+    <nav class="navbar navbar-default custom">
+      <div class="row">
+        <div class="col-xs-6 col-s-6 col-md-6 brand brand-name">
+          <a class="anchor" href="#">PIECE MEAL</a>
+        </div>
+        <div class="col-xs-2 col-md-2 logo-div">
+              <img class="logo-image" alt="Brand" src="../assets/images/icon-food.png">
+              </div>
+        <div class="col-xs-4 col-md-4 button-right">
+          <div class="">
+            <div class="">
+              <button class="btn btn-primary btn-lg" (click)="logOut()" *ngIf="authenticationService.userInfo" name="logOut">Log Out</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="">
+
+    </nav>
+
+    <div class="main-image">
       <app-main-page *ngIf="authenticationService.userInfo; else signInPage">
       </app-main-page>
       <ng-template #signInPage>
