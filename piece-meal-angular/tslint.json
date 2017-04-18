@@ -2,7 +2,11 @@
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
+  "extends": [
+    "tslint-eslint-rules"
+  ],
   "rules": {
+    "no-constant-condition": true,
     "callable-types": true,
     "class-name": true,
     "comment-format": [
@@ -18,6 +22,7 @@
       true,
       "spaces"
     ],
+    "ter-indent": [true, 2],
     "interface-over-type-literal": true,
     "label-position": true,
     "max-line-length": [

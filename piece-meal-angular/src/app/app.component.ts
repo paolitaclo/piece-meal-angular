@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
 // <ng-template #signInPage>
 //   <app-sign-in (onSignIn)="userSignedIn($event)" ></app-sign-in>
@@ -19,13 +20,13 @@ import { AuthenticationService } from './services/authentication.service';
               </div>
         <div class="col-xs-4 col-md-4 button-right">
           <button class="btn btn-primary btn-lg" (click)="logOut()"
-          *ngIf="authenticationService.userInfo" name="logOut">Log Out</button>
+          *ngIf="authenticationService.userInfo" name="logOut" [routerLink]="['signIn']">Log Out</button>
         </div>
       </div>
     </nav>
     <div class="main-image">
     </div>
-    <router-outlet></router-outlet>
+    <div><router-outlet></router-outlet></div>
   </div>
 `,
   styleUrls: ['./app.component.css']
@@ -33,11 +34,11 @@ import { AuthenticationService } from './services/authentication.service';
 export class AppComponent implements OnInit {
   userInfo: IUserInfo;
 
-  constructor(private authenticationService: AuthenticationService){ }
+  constructor(private authenticationService: AuthenticationService, private router: Router){ }
 
   userSignedIn(credentials: ICredentials) {
     this.authenticationService.getToken(credentials)
-    .then(userInfoRes => this.userInfo=userInfoRes);
+    .then(userInfoRes => this.userInfo = userInfoRes);
   }
 
   logOut(): void {
