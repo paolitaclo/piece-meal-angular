@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './services/authentication.service';
-
+// <ng-template #signInPage>
+//   <app-sign-in (onSignIn)="userSignedIn($event)" ></app-sign-in>
+// </ng-template>
+// <app-main-page>
+// </app-main-page>
 @Component({
   selector: 'app-root',
   template: `
@@ -19,14 +23,9 @@ import { AuthenticationService } from './services/authentication.service';
         </div>
       </div>
     </nav>
-
     <div class="main-image">
-      <app-main-page *ngIf="authenticationService.userInfo; else signInPage">
-      </app-main-page>
-      <ng-template #signInPage>
-        <app-sign-in (onSignIn)="userSignedIn($event)" ></app-sign-in>
-      </ng-template>
     </div>
+    <router-outlet></router-outlet>
   </div>
 `,
   styleUrls: ['./app.component.css']

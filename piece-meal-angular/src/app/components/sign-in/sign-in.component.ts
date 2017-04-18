@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -10,13 +10,20 @@ export class SignInComponent {
 
   @Output() onSignIn: EventEmitter<ICredentials>;
 
-  constructor() {
+  constructor(private router: Router) {
     this.credentials = {email: 'n_claros@gmail.com', password: 'luna'};
     this.onSignIn = new EventEmitter();
   }
 
   signInUser(credentials): void {
     this.onSignIn.emit(credentials);
+  }
+  btnClick(): void {
+    this.router.navigateByUrl('/home');
+  }
+  wrappedFunctions(): any {
+    this.signInUser(this.credentials);
+    this.btnClick();
   }
 
   get diagnostic() { return JSON.stringify(this.credentials); }

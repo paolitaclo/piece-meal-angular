@@ -6,14 +6,16 @@
         <form (ngSubmit)="signInUser(credentials)" #signInForm="ngForm">
           <div class="form-group">
             <label for="email">Email:</label>
-            <input type="text" class="form-control" id="email" required [(ngModel)]="credentials.email" name="email" >
+            <input type="text" class="form-control" id="email" required
+            [(ngModel)]="credentials.email" name="email" >
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" class="form-control" id="password" required [(ngModel)]="credentials.password" name="password">
+            <input type="password" class="form-control" id="password" required
+            [(ngModel)]="credentials.password" name="password">
           </div>
 
-          <button type="submit" class="btn btn-success blue-login">Log In</button>
+        <a routerLink="/home"><button type="submit" class="btn btn-success blue-login">Log In</button></a>
         </form>
       </div>
     </div>

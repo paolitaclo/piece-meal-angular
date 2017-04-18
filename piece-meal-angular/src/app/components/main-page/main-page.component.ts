@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+// import { Router, ActivatedRoute } from '@angular/router';
 import { RecipesService } from '../../services/recipes.service';
+
 @Component({
   selector: 'app-main-page',
   template: `
-    <div clas="jumboton center-cubes">
+    <div>
       <app-navigation-bar (onSearch)="recipesFound($event)" ></app-navigation-bar>
       <app-recipes-list [recipes]="recipes"></app-recipes-list>
     </div>
@@ -13,7 +15,8 @@ import { RecipesService } from '../../services/recipes.service';
 export class MainPageComponent {
   recipes: IRecipe[];
 
-  constructor(private recipesService: RecipesService) { }
+  constructor(private recipesService: RecipesService) {
+  }
 
   recipesFound(query) {
     this.recipesService.fetchRecipes(query)
