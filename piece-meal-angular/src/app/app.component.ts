@@ -18,7 +18,6 @@ import { AuthenticationService } from './services/authentication.service';
           *ngIf="authenticationService.userInfo" name="logOut">Log Out</button>
         </div>
       </div>
-
     </nav>
 
     <div class="main-image">

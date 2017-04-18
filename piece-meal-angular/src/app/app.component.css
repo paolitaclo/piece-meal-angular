@@ -18,12 +18,7 @@
   flex: 1 1 auto;
   background-image: url('../assets/images/background2.jpg');
   background-repeat: no-repeat;
-  /* background-size is the property you need, try contain vs cover */
   background-size: cover;
-  /*
-  width: 1440px;
-  height: 978px;
-  */
 }
 .custom {
     margin-bottom: 0;

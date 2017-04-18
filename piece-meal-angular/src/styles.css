@@ -1,11 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import './assets/vendors/semantic.min.css';
 
-/*.container {
-  width: 100%;
-  padding: 0;
-}*/
-
 .brand {
   font-size: 3em;
   margin: 25px 0 0 0;
