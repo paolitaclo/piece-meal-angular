@@ -11,8 +11,8 @@ import { AuthenticationService } from './services/authentication.service';
           <a class="anchor" href="#">PIECE MEAL</a>
         </div>
         <div class="col-xs-2 col-md-2 logo-div">
-              <img class="logo-image" alt="Brand" src="../assets/images/icon-food.png">
-              </div>
+          <img class="logo-image" alt="Brand" src="../assets/images/icon-food.png">
+        </div>
         <div class="col-xs-4 col-md-4 button-right">
           <button class="btn btn-primary btn-lg" (click)="logOut()"
           *ngIf="authenticationService.userInfo" name="logOut">Log Out</button>
@@ -34,11 +34,11 @@ import { AuthenticationService } from './services/authentication.service';
 export class AppComponent implements OnInit {
   userInfo: IUserInfo;
 
-  constructor(private authenticationService: AuthenticationService){ }
+  constructor(private authenticationService: AuthenticationService) { }
 
   userSignedIn(credentials: ICredentials) {
     this.authenticationService.getToken(credentials)
-    .then(userInfoRes => this.userInfo=userInfoRes);
+    .then(userInfoRes => this.userInfo = userInfoRes);
   }
 
   logOut(): void {

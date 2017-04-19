@@ -6,7 +6,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent {
-  credentials: ICredentials; //credentials is obj or atr and ICredentials is the type(from my interface)
+  credentials: ICredentials; // credentials is obj or atr and ICredentials is the type(from my interface)
 
   @Output() onSignIn: EventEmitter<ICredentials>;
 

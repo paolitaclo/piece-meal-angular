@@ -19,7 +19,6 @@ export class MainPageComponent {
   recipesFound(query) {
     this.recipesService.fetchRecipes(query)
       .then((recipes: IRecipe[]) => {
-        console.log('recipes in main component', recipes);
         this.recipes = recipes;
       });
   }

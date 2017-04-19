@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 //    {{recipe.instructions}}</div>
 @Component({
   selector: 'app-recipe-item',
-  template:`
+  template: `
   <div class="container recipe-card">
     <div class="row">
       <div class="col-s-8 col-l-5 col-l-offset-3">
@@ -28,12 +28,9 @@ import { Component, OnInit, Input } from '@angular/core';
   </div>`,
   styleUrls: ['./recipe-item.component.css']
 })
-export class RecipeItemComponent implements OnInit {
-  @Input() recipe: IRecipe;
-  constructor() { }
 
-  ngOnInit() {
-  }
-  //create function that gets recipe.instructions and
-  //return an array of instructions
+export class RecipeItemComponent {
+  @Input() recipe: IRecipe;
+
+  constructor() { }
 }

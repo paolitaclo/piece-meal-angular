@@ -11,26 +11,24 @@ export class AuthenticationService {
   }
 
   getToken(credentials: ICredentials): Promise<IUserInfo> {
-    console.log('get token', credentials);
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
 
     return this.http.post(this.postUrl, credentials, options)
     .toPromise()
-    .then(response =>{
+    .then(response => {
       this.userInfo = response.json();
-      console.log(this.userInfo);
-      localStorage.setItem('user', JSON.stringify(this.userInfo))
+      localStorage.setItem('user', JSON.stringify(this.userInfo));
       return this.userInfo;
     })
-    .catch((err) =>{
+    .catch((err) => {
       console.log(err);
     });
   }
 
   getUserInfo(userInfo: IUserInfo): any {
     if (this.userInfo) {
-        return this.userInfo;
+      return this.userInfo;
     } else {
       this.userInfo = JSON.parse(localStorage.getItem('user'));
       return this.userInfo;

@@ -10,22 +10,21 @@ import { Component, Output, EventEmitter } from '@angular/core';
         </div>
         <input class="btn btn-primary btn-lg" type="submit" value="Search Recipe"/>
       </form>
-    </div>
-  `,
+    </div>`,
   styleUrls: ['./navigation-bar.component.css']
 })
+
 export class NavigationBarComponent {
   query: string;
   @Output() onSearch: EventEmitter<string>;
 
   constructor() {
-  this.query = 'cheese';
-  this.onSearch = new EventEmitter();
-}
+    this.query = 'cheese';
+    this.onSearch = new EventEmitter();
+  }
 
-searchRecipe(query, $event): void {
-  $event.preventDefault();
-  this.onSearch.emit(query);
-}
-
+  searchRecipe(query, $event): void {
+    $event.preventDefault();
+    this.onSearch.emit(query);
+  }
 }

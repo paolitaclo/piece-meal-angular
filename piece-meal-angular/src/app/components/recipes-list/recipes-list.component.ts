@@ -6,11 +6,10 @@ import { Component, Input, Output } from '@angular/core';
     <div *ngFor="let recipe of recipes">
       <app-recipe-item [recipe]="recipe"></app-recipe-item>
     </div>
-  `,
-  styleUrls: ['./recipes-list.component.css']
+  `
 })
+
 export class RecipesListComponent {
   @Input() recipes: IRecipe[];
   constructor() { }
-
 }

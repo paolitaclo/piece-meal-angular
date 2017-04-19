@@ -6,7 +6,6 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { RecipesListComponent } from './components/recipes-list/recipes-list.component';
 import { RecipeItemComponent } from './components/recipe-item/recipe-item.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
@@ -18,7 +17,6 @@ import { RecipesService } from './services/recipes.service';
     AppComponent,
     RecipesListComponent,
     RecipeItemComponent,
-    SearchBarComponent,
     NavigationBarComponent,
     SignInComponent,
     MainPageComponent
