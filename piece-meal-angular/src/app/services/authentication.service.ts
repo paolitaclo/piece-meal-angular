@@ -12,8 +12,8 @@ export class AuthenticationService {
 
   getToken(credentials: ICredentials): Promise<IUserInfo> {
     console.log('get token', credentials);
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
+    const headers = new Headers({ 'Content-Type': 'application/json' }); // change let for const
+    const options = new RequestOptions({ headers: headers });
 
     return this.http.post(this.postUrl, credentials, options)
     .toPromise()
@@ -23,14 +23,14 @@ export class AuthenticationService {
       localStorage.setItem('user', JSON.stringify(this.userInfo))
       return this.userInfo;
     })
-    .catch((err) =>{
+    .catch((err) => {
       console.log(err);
     });
   }
 
   getUserInfo(userInfo: IUserInfo): any {
     if (this.userInfo) {
-        return this.userInfo;
+      return this.userInfo;
     } else {
       this.userInfo = JSON.parse(localStorage.getItem('user'));
       return this.userInfo;
