@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
+// <app-sign-in (onSignIn)="userSignedIn($event)" ></app-sign-in>
 // <ng-template #signInPage>
-//   <app-sign-in (onSignIn)="userSignedIn($event)" ></app-sign-in>
 // </ng-template>
 // <app-main-page>
 // </app-main-page>
@@ -16,17 +16,19 @@ import { AuthenticationService } from './services/authentication.service';
           <a class="anchor" href="#">PIECE MEAL</a>
         </div>
         <div class="col-xs-2 col-md-2 logo-div">
-              <img class="logo-image" alt="Brand" src="../assets/images/icon-food.png">
+              <img class="logo-image" alt="Brand"
+              src="../assets/images/icon-food.png">
               </div>
         <div class="col-xs-4 col-md-4 button-right">
-          <button class="btn btn-primary btn-lg" (click)="logOut()"
-          *ngIf="authenticationService.userInfo" name="logOut" [routerLink]="['signIn']">Log Out</button>
+          <button *ngIf="authenticationService.userInfo"
+          class="btn btn-primary btn-lg" (click)="logOut()" name="logOut"
+          [routerLink]="['signIn']">Log Out</button>
         </div>
       </div>
     </nav>
     <div class="main-image">
+      <router-outlet></router-outlet>
     </div>
-    <div><router-outlet></router-outlet></div>
   </div>
 `,
   styleUrls: ['./app.component.css']
@@ -34,12 +36,14 @@ import { AuthenticationService } from './services/authentication.service';
 export class AppComponent implements OnInit {
   userInfo: IUserInfo;
 
-  constructor(private authenticationService: AuthenticationService, private router: Router){ }
+  constructor(
+    private authenticationService: AuthenticationService,
+    private router: Router) { }
 
-  userSignedIn(credentials: ICredentials) {
-    this.authenticationService.getToken(credentials)
-    .then(userInfoRes => this.userInfo = userInfoRes);
-  }
+  // userSignedIn(credentials: ICredentials) {
+  //   this.authenticationService.getToken(credentials)
+  //   .then(userInfoRes => this.userInfo = userInfoRes);
+  // }
 
   logOut(): void {
     this.authenticationService.userLogOut(this.userInfo);

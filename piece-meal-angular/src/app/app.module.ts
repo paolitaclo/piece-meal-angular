@@ -16,8 +16,8 @@ import { RecipesService } from './services/recipes.service';
 const routes: Routes = [
   { path: '', redirectTo: 'signIn', pathMatch: 'full' },
   { path: 'signIn', component: SignInComponent },
-  { path: 'home', component: MainPageComponent  canActivate: [LoggedInGuard]}
-]
+  { path: 'home', component: MainPageComponent }
+];
 
 @NgModule({
   declarations: [
