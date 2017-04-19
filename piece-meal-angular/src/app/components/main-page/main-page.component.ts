@@ -10,6 +10,7 @@ import { RecipesService } from '../../services/recipes.service';
   `,
   styleUrls: ['./main-page.component.css']
 })
+
 export class MainPageComponent {
   recipes: IRecipe[];
 
