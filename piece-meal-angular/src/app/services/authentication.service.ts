@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AuthenticationService {
-  postUrl: string = 'https://piecemeal-api.herokuapp.com/api/v1/token';
+  postUrl = 'https://piecemeal-api.herokuapp.com/api/v1/token';
   userInfo: IUserInfo;
   constructor(private http: Http) {
   }

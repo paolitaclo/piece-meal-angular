@@ -12,7 +12,7 @@ function instructionsIntoArr(instructions: string) {
 
 @Injectable()
 export class RecipesService {
-  searchRecipesUrl: string = 'https://piecemeal-api.herokuapp.com/api/v1/search/recipes';
+  searchRecipesUrl = 'https://piecemeal-api.herokuapp.com/api/v1/search/recipes';
 
   constructor(private http: Http, private authentication: AuthenticationService) { }
 
