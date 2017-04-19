@@ -34,7 +34,7 @@ import { AuthenticationService } from './services/authentication.service';
 export class AppComponent implements OnInit {
   userInfo: IUserInfo;
 
-  constructor(private authenticationService: AuthenticationService) { }
+  constructor(public authenticationService: AuthenticationService) { }
 
   userSignedIn(credentials: ICredentials) {
     this.authenticationService.getToken(credentials)
